@@ -31,5 +31,8 @@ $router->put('/api/resources/{schema}', [
 $router->delete('/api/resources/{schema}', [
     "as" => "delete.schema", "uses" => 'SchemaController@delete'
 ]);
-
+////////////////////////////////////////////////////////////
+$router->post('/api/'.config('app.api_version')."/{schema}", [
+    "as" => "add.model", "uses" => 'ModelController@add'
+]);
 

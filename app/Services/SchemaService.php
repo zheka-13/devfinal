@@ -31,6 +31,15 @@ class SchemaService
     }
 
     /**
+     * @throws FieldEntityException
+     * @throws SchemaException
+     */
+    public function getSchema(string $schema): SchemaEntity
+    {
+        return $this->schemaStorage->getSchema($schema);
+    }
+
+    /**
      * @param string $schema
      * @param FieldEntity[] $fields
      * @return int
@@ -54,7 +63,7 @@ class SchemaService
      */
     public function updateSchema(string $schema, array $fields)
     {
-        $oldSchema = $this->schemaStorage->getSchemaByName($schema);
+        $oldSchema = $this->schemaStorage->getSchema($schema);
         $newSchema = new SchemaEntity($schema, $fields);
         $this->guardSchemaUpdate($newSchema, $oldSchema);
         $this->schemaStorage->update($newSchema);

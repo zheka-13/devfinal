@@ -41,7 +41,7 @@ class SchemaStorage
      * @throws FieldEntityException
      * @throws SchemaException
      */
-    public function getSchemaByName(string $schema): SchemaEntity
+    public function getSchema(string $schema): SchemaEntity
     {
         $data = $this->db->table("schemas")
             ->where("schema", "=", $schema)->first();
