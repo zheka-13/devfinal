@@ -14,7 +14,7 @@
 */
 
 $router->get('/', [
-    "as" => "about", "uses" => 'AboutController@about'
+    "as" => "about", "uses" => 'ExampleController@test'
 ]);
 
 
