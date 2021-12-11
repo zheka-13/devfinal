@@ -13,7 +13,7 @@ class CreateEndpointsTable extends Migration
      */
     public function up()
     {
-        Schema::create('endpoints', function (Blueprint $table) {
+        Schema::create('schemas', function (Blueprint $table) {
             $table->integer("id")->autoIncrement();
             $table->string("schema")->nullable(false)->unique('schema');
             $table->string("fields")->nullable(false);

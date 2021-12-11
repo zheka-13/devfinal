@@ -14,7 +14,22 @@
 */
 
 $router->get('/', [
-    "as" => "about", "uses" => 'ExampleController@test'
+    "as" => "about", "uses" => 'AboutController@test'
+]);
+
+$router->get('/api/resources', [
+    "as" => "get.schemas", "uses" => 'SchemaController@list'
+]);
+$router->post('/api/resources', [
+    "as" => "add.schema", "uses" => 'SchemaController@add'
+]);
+
+$router->put('/api/resources/{schema}', [
+    "as" => "update.schema", "uses" => 'SchemaController@update'
+]);
+
+$router->delete('/api/resources/{schema}', [
+    "as" => "delete.schema", "uses" => 'SchemaController@delete'
 ]);
 
 
