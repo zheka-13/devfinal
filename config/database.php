@@ -5,7 +5,7 @@ return [
     'connections' => [
         'sqlite' => [
             'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', ""),
+            'database' => storage_path("db/".env('DB_DATABASE', "")),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
