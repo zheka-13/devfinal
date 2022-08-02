@@ -7,7 +7,7 @@ use Laravel\Lumen\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
-    /**
+    /** test12345
      * The Artisan commands provided by your application.
      *
      * @var array
